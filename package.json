@@ -1,0 +1,11 @@
+{
+  "name": "typescript-basics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.47",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {"dev:server": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules src/main.ts "}
+}
