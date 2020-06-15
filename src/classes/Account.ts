@@ -14,4 +14,22 @@ export default abstract class Account {
   protected getBalance(): number {
     return this.balance;
   }
+
+  public abstract withdraw(value: number): void;
+
+  public abstract cashDeposit(value: number): void;
+
+  public withdrawMoney(value: number): boolean {
+    if (this.balance < value) {
+      return false;
+    }
+    this.balance -= value;
+    return true;
+  }
+
+  public cashTransfer(value: number, account: Account) {
+    if (this.withdrawMoney(value)) {
+      account.balance += value;
+    }
+  }
 }
